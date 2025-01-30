@@ -1,10 +1,13 @@
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
 }
 
 body > h1 {
     margin: 0 auto;
+    padding: 5px;
     text-align: center;
     width: fit-content;
     border: solid black 1px;
@@ -14,4 +17,22 @@ body > h1 {
 
 .projet {
     max-width: 200px;
+    border: solid black 1px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+.projet > h1 {
+    margin: 5px;
+}
+
+.projet > hr {
+    margin: 0;
+}
+
+footer {
+    position: relative;
+    text-align: center;
+    bottom: 0;
 }
