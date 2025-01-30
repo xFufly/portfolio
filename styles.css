@@ -1,5 +1,17 @@
 body {
-    display: grid;
     margin: 0;
     padding: 0;
+}
+
+body > h1 {
+    margin: 0 auto;
+    text-align: center;
+    width: fit-content;
+    border: solid black 1px;
+    border-radius: 5px;
+    border-top: none;
+}
+
+.projet {
+    max-width: 200px;
 }
