@@ -1,38 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+    /* Palette rose */
+
+    --parrot-pink: #DA9E93;
+    --bone: #EBD4CC;
+    --popstar: #B6465F;
+    --burgundy: #880620;
+    --dark-scarlet: #51000F;
+
+    /* Palette sobre */
+
+    --rifle-green: #3F4C41;
+    --chestnut: #9B4A3D;
+    --copper: #BF7F34;
+    --white_coffee: #E8DFD4;
+    --eerie-black: #1B1E1C; 
+}
+
 body {
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
+    background-color: var(--white_coffee);
+    color: var(--eerie-black);
 }
 
-body > h1 {
+#toggleTheme {
+    position: absolute;
+    margin: 14px;
+    width: 160px;
+    height: 30px;
+    right: 0;
+    background-color: var(--chestnut);
+    color: var(--white_coffee);
+    border-radius: 5px;
+    border: solid var(--copper) 1px;
+}
+
+h1 {
+    font-family: "Comfortaa", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+hr {
+    box-shadow: none;
+    border-color: var(--chestnut);
+}
+
+body > h1:not(:first-child) {
+    text-align: center;
+    font-size: 125%;
+    margin-top: 15px;
+    color: var(--rifle-green);
+
+}
+
+body > h1:first-child {
     margin: 0 auto;
     padding: 5px;
     text-align: center;
     width: fit-content;
-    border: solid black 1px;
+    border: solid var(--chestnut) 1px;
     border-radius: 5px;
     border-top: none;
+    color: var(--chestnut);
+}
+
+#infosDiverses {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    float: left;
+    width: 20%;
+    text-align: center;
+    border: solid var(--chestnut) 1px;
+    border-radius: 5px;
+    border-left: none;
+}
+
+#infosDiverses ul {
+    text-align: left;
+    padding-left: 25%;
+}
+
+#projets {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
 }
 
 .projet {
+    display: flex;
+    flex-direction: column;
     max-width: 200px;
-    border: solid black 1px;
+    border: solid var(--chestnut) 1px;
     border-radius: 10px;
     text-align: center;
     margin: 5px;
 }
 
-.projet > h1 {
-    margin: 5px;
+.projet {
+    padding: 5px;
+    color: black;
+}
+
+.projet h1 {
+    margin: 1px;
 }
 
 .projet > hr {
     margin: 0;
 }
 
-footer {
-    position: relative;
+#langages {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    gap: 10px;
+}
+
+#langages .line {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+
+.langage {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    border: solid 1px var(--chestnut);
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.langage img, .langage h2 {
+    margin: auto;
+}
+
+.langage img {
+    width: 64px;
+    border-radius: 5px;
+}
+
+.langage .barre {
+    width: 75%;
+    height: 10px;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.langage p {
+    font-size: 75%;
+    padding: 0;
+    margin: 0;
     text-align: center;
+}
+
+.langage .barre .progres {
+    border-radius: 5px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+html body section#langages article#nodejs.langage div.barre div.progres {
+    width: 75%;
+    background-color: rgb(0, 187, 0);
+}
+
+html body section#langages article#cordova.langage div.barre div.progres {
+    width: 70%;
+    background-color: rgb(2, 215, 2);
+}
+
+html body section#langages article#java.langage div.barre div.progres {
+    width: 65%;
+    background-color: rgb(76, 255, 76);
+}
+
+html body section#langages article#python.langage div.barre div.progres {
+    width: 55%;
+    background-color: rgb(99, 255, 99);
+}
+
+html body section#langages article#cpp.langage div.barre div.progres {
+    width: 50%;
+    background-color: rgb(255, 183, 76);
+}
+
+html body section#langages article#minecraft.langage div.barre div.progres {
+    width: 45%;
+    background-color: rgb(253, 158, 16);
+}
+
+footer {
+    position: fixed;
     bottom: 0;
+    width: 100%;
+    background: var(--eerie-black);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Thème rose */
+
+.pink-theme {
+    background-color: var(--bone);
+    color: var(--dark-scarlet);
+}
+.pink-theme h1 {
+    color: var(--burgundy);
+}
+.pink-theme hr {
+    border-color: var(--popstar);
+}
+.pink-theme .projet {
+    border-color: var(--popstar);
+}
+.pink-theme #infosDiverses {
+    border-color: var(--popstar);
 }

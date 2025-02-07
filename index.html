@@ -13,20 +13,104 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <button id="toggleTheme">Activer le thème rose</button>
+    
     <h1>Portfolio de Tim Didelot</h1>
-    <aside id="infosPerso">
-
+    <aside id="infosDiverses">
+        <h1>Informations diverses</h1>
+        <hr>
+        <article class="info" id="perso">
+            <p>Né le 19 Décembre 2006</p>
+        </article>
+        <hr>
+        <article class="info" id="contacts">
+            <p><b>Mail : </b><a href="mailto:tdidelot@iutbayonne.univ-pau.fr">tdidelot@iutbayonne.univ-pau.fr</a></p>
+            <p><b>Téléphone : </b>+33 7 63 61 67 46</p>
+        </article>
+        <hr>
+        <article class="info" id="parcours">
+            <p>IUT de Bayonne et du Pays Basque</p>
+            <ul>
+                <li>BUT Informatique</li>
+                <li>1 ère année, classement : 4 / 63</li>
+                <li>C++, Git, Figma & HTML CSS</li>
+                <li>Gestion de projet</li>
+            </ul>
+        </article>
     </aside>
+
+    <h1>Projets phares</h1>
 
     <section id="projets">
         <article class="projet" id="neuraflow">
             <h1>Neuraflow</h1>
             <hr>
-            <p>Description de la bibliothèque ici</p>
-            <a href="#">Lien vers la biliothèque ici</a>
+            <p>Bibliothèque pédagogique visant à enseigner le principe d'un réseau neuronal</p>
+            <a href="#">Essayer la bibliothèque</a>
+            <a href="#">Manuel et documentation</a>
+        </article>
+        <article class="projet" id="fossnote">
+            <h1>Fossnote</h1>
+            <hr>
+            <p>Reproduction du backend de pronote en NodeJS avec express</p>
+            <a href="#">Essayer le projet</a>
+            <a href="#">Manuel et documentation</a>
+        </article>
+        <article class="projet" id="yujo">
+            <h1>Yujo</h1>
+            <hr>
+            <p>Réseau social et amical</p>
+            <a href="#">Essayer le projet</a>
+            <a href="#">Manuel et documentation</a>
+        </article>
+    </section>
+
+    <h1>Langages et technologies maîtrisées</h1>
+
+    <section id="langages">
+        <article class="line">
+            <article class="langage" id="nodejs">
+                <h2>NodeJS</h2>
+                <p>Superbe adaptation aux modules</p>
+                <img src="./img/icons/nodejsicon.png">
+                <div class="barre"><div class="progres"></div></div>
+            </article>
+            <article class="langage" id="cordova">
+                <h2>Cordova</h2>
+                <p>Avec HTML CSS JS</p>
+                <img src="./img/icons/cordovaicon.png">
+                <div class="barre"><div class="progres"></div></div>
+            </article>
+            <article class="langage" id="java">
+                <h2>Java</h2>
+                <p>Mon préféré</p>
+                <img src="./img/icons/javaicon.webp">
+                <div class="barre"><div class="progres"></div></div>
+            </article>
+            <article class="langage" id="python">
+                <h2>Python</h2>
+                <p>Pour mes projets courts</p>
+                <img src="./img/icons/pyicon.webp">
+                <div class="barre"><div class="progres"></div></div>
+            </article>
+        </article>
+        <article class="line">
+            <article class="langage" id="cpp">
+                <h2>C++</h2>
+                <p>En plein apprentissage</p>
+                <img src="./img/icons/cppicon.png">
+                <div class="barre"><div class="progres"></div></div>
+            </article>
+            <article class="langage" id="minecraft">
+                <h2>Minecraft</h2>
+                <p>Mods et Plugins sur Java</p>
+                <img src="./img/icons/minecraftIcon.webp">
+                <div class="barre"><div class="progres"></div></div>
+            </article>
         </article>
     </section>
 
     <footer>&copy; DIDELOT Tim - 2025</footer>
+    <script src="script.js"></script>
 </body>
 </html>
