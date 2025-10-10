@@ -1,116 +1,395 @@
-<!--
-    Fichier : index.html
-    But : Afficher mon portfolio
-    Auteur : DIDELOT Tim
-    Date : 21/01/2025 
--->
-<!DOCTYPE html> <!-- Document de type HTML -->
-<html lang="fr"> <!-- Page française -->
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tim Didelot</title>
+    <meta name="description" content="Portfolio de Tim DIDELOT - Étudiant BUT informatique, Data Analyst chez Wikicampers, développeur freelance">
+    <meta name="keywords" content="développeur, portfolio, Data Analyst, Python, C++, Java, NodeJS, freelance">
+    <meta name="author" content="Tim DIDELOT">
+    <meta property="og:title" content="Portfolio | xFufly - DIDELOT Tim">
+    <meta property="og:description" content="Étudiant BUT informatique, Data Analyst chez Wikicampers et développeur freelance passionné par la technologie">
+    <meta property="og:type" content="website">
+    <title>Portfolio | xFufly - DIDELOT Tim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tim DIDELOT",
+        "alternateName": "xFufly",
+        "description": "Étudiant BUT informatique, Data Analyst chez Wikicampers, développeur freelance",
+        "url": "https://xfufly.github.io/portfolio",
+        "email": "tdidelot@iutbayonne.univ-pau.fr",
+        "telephone": "0763616746",
+        "sameAs": [
+            "https://github.com/xFufly"
+        ],
+        "jobTitle": ["Data Analyst", "Étudiant en informatique", "Développeur Freelance"],
+        "worksFor": [
+            {
+                "@type": "Organization",
+                "name": "Wikicampers"
+            },
+            {
+                "@type": "Organization",
+                "name": "IUT de Bayonne et du Pays Basque"
+            }
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "5 Allée de la Claire Fontaine",
+            "addressLocality": "Tarnos",
+            "postalCode": "40220",
+            "addressCountry": "FR"
+        },
+        "knowsAbout": ["Python", "C++", "Java", "NodeJS", "Data Analysis", "Web Development", "Machine Learning", "SQL", "Git"]
+    }
+    </script>
 </head>
 <body>
-    <button id="toggleTheme">Activer le thème rose</button>
-    
-    <h1>Portfolio de Tim Didelot</h1>
-    <aside id="infosDiverses">
-        <h1>Informations diverses</h1>
-        <hr>
-        <article class="info" id="perso">
-            <p>Né le 19 Décembre 2006</p>
-        </article>
-        <hr>
-        <article class="info" id="contacts">
-            <p><b>Mail : </b><a href="mailto:tdidelot@iutbayonne.univ-pau.fr">tdidelot@iutbayonne.univ-pau.fr</a></p>
-            <p><b>Téléphone : </b>+33 7 63 61 67 46</p>
-        </article>
-        <hr>
-        <article class="info" id="parcours">
-            <p>IUT de Bayonne et du Pays Basque</p>
-            <ul>
-                <li>BUT Informatique</li>
-                <li>1 ère année, classement : 4 / 63</li>
-                <li>C++, Git, Figma & HTML CSS</li>
-                <li>Gestion de projet</li>
-            </ul>
-        </article>
-    </aside>
+    <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span id="nav-brand">xFufly</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about" id="nav-about">À propos</a>
+                <a href="#experience" id="nav-experience">Expérience</a>
+                <a href="#skills" id="nav-skills">Compétences</a>
+                <a href="#projects" id="nav-projects">Projets</a>
+                <a href="#contact" id="nav-contact">Contact</a>
+            </div>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Basculer le thème">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <div class="lang-switch">
+                    <button onclick="setLang('fr')" class="lang-btn active" data-lang="fr" aria-label="Français">FR</button>
+                    <button onclick="setLang('en')" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <h1>Projets phares</h1>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="about" class="hero" role="banner">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="profile-section">
+                        <img src="https://via.placeholder.com/150x150/3b82f6/ffffff?text=TD" alt="Portrait de Tim DIDELOT, développeur" class="profile-img" loading="eager">
+                        <div class="profile-status">
+                            <span class="status-indicator"></span>
+                            <span id="status-text">Disponible pour des projets</span>
+                        </div>
+                    </div>
+                    <div class="hero-text">
+                        <h1 id="name" class="hero-title">Tim DIDELOT</h1>
+                        <h2 id="subtitle" class="hero-subtitle">Data Analyst • Étudiant BUT Informatique</h2>
+                        <p id="location" class="hero-location">📍 Tarnos • IUT Anglet</p>
+                        <p id="hero-description" class="hero-description">Passionné par l'informatique depuis l'âge de 10 ans, je combine développement technique et analyse de données. Musicien amateur (batterie, piano, basse) et amateur de jazz.</p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="cta-primary" id="cta-projects">Voir mes projets</a>
+                            <a href="#contact" class="cta-secondary" id="cta-contact">Me contacter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="projets">
-        <article class="projet" id="neuraflow">
-            <h1>Neuraflow</h1>
-            <hr>
-            <p>Bibliothèque pédagogique visant à enseigner le principe d'un réseau neuronal</p>
-            <a href="#">Essayer la bibliothèque</a>
-            <a href="#">Manuel et documentation</a>
-        </article>
-        <article class="projet" id="fossnote">
-            <h1>Fossnote</h1>
-            <hr>
-            <p>Reproduction du backend de pronote en NodeJS avec express</p>
-            <a href="#">Essayer le projet</a>
-            <a href="#">Manuel et documentation</a>
-        </article>
-        <article class="projet" id="yujo">
-            <h1>Yujo</h1>
-            <hr>
-            <p>Réseau social et amical</p>
-            <a href="#">Essayer le projet</a>
-            <a href="#">Manuel et documentation</a>
-        </article>
-    </section>
+        <!-- Experience Section -->
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <h2 id="experience-title" class="section-title">Expérience</h2>
+                <div class="experience-timeline">
+                    <div class="experience-item current">
+                        <div class="experience-date">
+                            <span id="exp-current">Septembre 2025 - Présent</span>
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-company">
+                                <h3>Wikicampers</h3>
+                                <span class="experience-role" id="role-analyst">Data Analyst</span>
+                            </div>
+                            <ul class="experience-details">
+                                <li id="exp-warehouse">Gestion des entrepôts de données et migrations de bases de données</li>
+                                <li id="exp-dashboards">Création de tableaux de bord pour tous les départements avec Metabase</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-date">
+                            <span id="exp-freelance-date">2017 - Présent</span>
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-company">
+                                <h3 id="freelance-title">Développeur Freelance</h3>
+                            </div>
+                            <ul class="experience-details">
+                                <li id="exp-websites">Développement de sites web, mods Minecraft, applications pour associations</li>
+                                <li id="exp-neuraflow">Création de la bibliothèque NodeJS NeuraFlow pour les réseaux de neurones</li>
+                                <li id="exp-clients">Collaboration avec des clients (associations et PME)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-date">
+                            <span id="exp-president-date">Sept. 2022 - Juin 2024</span>
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-company">
+                                <h3 id="exp-festival">Printemps de la Musique, La Réole</h3>
+                                <span class="experience-role" id="role-president">Président & Membre du conseil</span>
+                            </div>
+                            <ul class="experience-details">
+                                <li id="exp-organization">Organisation de deux festivals annuels et plusieurs concerts</li>
+                                <li id="exp-management">Gestion de projet et compétences en communication</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h1>Langages et technologies maîtrisées</h1>
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2 id="skills-title" class="section-title">Compétences</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 id="programming-title">Programmation</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <img src="img/icons/pyicon.webp" alt="Python" class="skill-icon">
+                                <span>Python</span>
+                                <div class="skill-level" data-level="85"></div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="img/icons/javaicon.webp" alt="Java" class="skill-icon">
+                                <span>Java</span>
+                                <div class="skill-level" data-level="80"></div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="img/icons/nodejsicon.png" alt="Node.js" class="skill-icon">
+                                <span>NodeJS</span>
+                                <div class="skill-level" data-level="85"></div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="img/icons/cppicon.png" alt="C++" class="skill-icon">
+                                <span>C++</span>
+                                <div class="skill-level" data-level="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 id="web-data-title">Web & Data</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <img src="img/icons/js-icon.svg" alt="JavaScript" class="skill-icon">
+                                <span>HTML/CSS/JS</span>
+                                <div class="skill-level" data-level="80"></div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="img/icons/cordovaicon.png" alt="Cordova" class="skill-icon">
+                                <span>Cordova</span>
+                                <div class="skill-level" data-level="70"></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-icon-text">SQL</span>
+                                <span id="skill-sqlbdd">SQL & Bases de données</span>
+                                <div class="skill-level" data-level="75"></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-icon-text">Git</span>
+                                <span id="skill-git">Git & Contrôle de version</span>
+                                <div class="skill-level" data-level="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 id="soft-skills-title">Compétences transversales</h3>
+                        <div class="skills-list soft-skills">
+                            <div class="skill-tag" id="skill-pm">Gestion de projet</div>
+                            <div class="skill-tag" id="skill-team">Travail en équipe</div>
+                            <div class="skill-tag" id="skill-com">Communication client</div>
+                            <div class="skill-tag" id="skill-details">Attention aux détails</div>
+                            <div class="skill-tag" id="skill-engage">Engagement</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="langages">
-        <article class="line">
-            <article class="langage" id="nodejs">
-                <h2>NodeJS</h2>
-                <p>Superbe adaptation aux modules</p>
-                <img src="./img/icons/nodejsicon.png">
-                <div class="barre"><div class="progres"></div></div>
-            </article>
-            <article class="langage" id="cordova">
-                <h2>Cordova</h2>
-                <p>Avec HTML CSS JS</p>
-                <img src="./img/icons/cordovaicon.png">
-                <div class="barre"><div class="progres"></div></div>
-            </article>
-            <article class="langage" id="java">
-                <h2>Java</h2>
-                <p>Mon préféré</p>
-                <img src="./img/icons/javaicon.webp">
-                <div class="barre"><div class="progres"></div></div>
-            </article>
-            <article class="langage" id="python">
-                <h2>Python</h2>
-                <p>Pour mes projets courts</p>
-                <img src="./img/icons/pyicon.webp">
-                <div class="barre"><div class="progres"></div></div>
-            </article>
-        </article>
-        <article class="line">
-            <article class="langage" id="cpp">
-                <h2>C++</h2>
-                <p>En plein apprentissage</p>
-                <img src="./img/icons/cppicon.png">
-                <div class="barre"><div class="progres"></div></div>
-            </article>
-            <article class="langage" id="minecraft">
-                <h2>Minecraft</h2>
-                <p>Mods et Plugins sur Java</p>
-                <img src="./img/icons/minecraftIcon.webp">
-                <div class="barre"><div class="progres"></div></div>
-            </article>
-        </article>
-    </section>
+        <!-- Education Section -->
+        <section id="education" class="education-section">
+            <div class="container">
+                <h2 id="education-title" class="section-title">Formation</h2>
+                <div class="education-timeline">
+                    <div class="education-item current">
+                        <div class="education-date">
+                            <span id="edu-current">2024 - Présent</span>
+                        </div>
+                        <div class="education-content">
+                            <h3 id="edu-but">BUT Informatique</h3>
+                            <p class="education-school">IUT Anglet, près de Bayonne</p>
+                            <ul class="education-details">
+                                <li id="edu-courses">Programmation (C++ & Python), Bases de données (SQL), Réseaux, Systèmes (Bash), Web (HTML, CSS)</li>
+                                <li id="edu-ranking">3ème sur 60 étudiants en première année, actuellement en deuxième année</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="education-date">
+                            <span id="edu-bac-date">2021 - 2024</span>
+                        </div>
+                        <div class="education-content">
+                            <h3 id="edu-bac">Baccalauréat Général</h3>
+                            <p class="education-school">Lycée Jean Renou, La Réole</p>
+                            <p id="edu-specializations">Spécialités : Informatique, Anglais, Mathématiques</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer>&copy; DIDELOT Tim - 2025</footer>
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 id="projects-title" class="section-title">Projets principaux</h2>
+                <div class="projects-grid">
+                    <article class="project-card featured" data-category="web">
+                        <div class="project-image">
+                            <img src="img/icons/forgeicon.webp" alt="StoryForge project" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="https://github.com/xFufly/StoryForge" class="project-link" target="_blank" rel="noopener" aria-label="Voir StoryForge sur GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>StoryForge</h3>
+                            <p id="storyforge-desc">Logiciel de création et d'édition de User Stories en SCRUM.</p>
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">SCRUM</span>
+                                <span class="tag">Agile</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="ai">
+                        <div class="project-image">
+                            <img src="img/icons/nodejsicon.png" alt="neuraFlow project" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="https://github.com/xFufly/neuraFlow" class="project-link" target="_blank" rel="noopener" aria-label="Voir neuraFlow sur GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>PredictionAI</h3>
+                            <p id="predictionai-desc">Système IA léger basé sur la bibliothèque NeuraFlow.</p>
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">AI</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="library">
+                        <div class="project-image">
+                            <img src="img/icons/nodejsicon.png" alt="neuraFlow project" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="https://github.com/xFufly/neuraFlow" class="project-link" target="_blank" rel="noopener" aria-label="Voir neuraFlow sur GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>neuraFlow</h3>
+                            <p id="neuraflow-desc">Bibliothèque JavaScript pour le Machine Learning.</p>
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">ML</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="img/icons/nodejsicon.png" alt="fossnote project" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="https://github.com/xFufly/fossnote" class="project-link" target="_blank" rel="noopener" aria-label="Voir fossnote sur GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>fossnote</h3>
+                            <p id="fossnote-desc">PRONOTE auto-hébergé open source et gratuit.</p>
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">PRONOTE</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 id="contact-title" class="section-title">Contact</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <p id="contact-description">Intéressé par mon profil ? N'hésitez pas à me contacter !</p>
+                        <div class="social-links">
+                            <a href="https://github.com/xFufly" class="social-link github" target="_blank" rel="noopener" aria-label="Profil GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="mailto:tdidelot@iutbayonne.univ-pau.fr" class="social-link email" aria-label="Envoyer un email">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m4 4 7.07 7.07a.4.4 0 0 0 .565 0L19 4"/>
+                                    <path d="M21 6v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6"/>
+                                    <rect width="18" height="16" x="3" y="4" rx="2"/>
+                                </svg>
+                                <span>Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p id="footer-text">&copy; 2025 Tim DIDELOT. Tous droits réservés.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
