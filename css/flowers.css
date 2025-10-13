@@ -1,3 +1,30 @@
+/* CSS Custom Properties for Flowers System */
+:root {
+    /* Pink accents */
+    --accent-pink: #f9a8d4; /* lighter pink (for light background) */
+    --accent-pink-2: #f472b6; /* rose-400 */
+    --accent-pink-rgb: 249, 168, 212;
+    --accent-pink-2-rgb: 244, 114, 182;
+    --accent-success: #10b981;
+    --border-light: #e2e8f0;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-strong: rgba(0, 0, 0, 0.25);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    /* Dark theme pink accents */
+    --accent-pink: #ec4899; /* stronger pink for dark background */
+    --accent-pink-2: #f472b6;
+    --accent-pink-rgb: 236, 72, 153;
+    --accent-pink-2-rgb: 244, 114, 182;
+    --border-light: #334155;
+    --shadow-light: rgba(0, 0, 0, 0.3);
+    --shadow-medium: rgba(0, 0, 0, 0.4);
+    --shadow-strong: rgba(0, 0, 0, 0.6);
+}
+
 /* Flower Animation Styles */
 
 /* Flower Container Positioning */
