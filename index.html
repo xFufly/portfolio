@@ -52,7 +52,31 @@
         },
         "knowsAbout": ["Python", "C++", "Java", "NodeJS", "Data Analysis", "Web Development", "Machine Learning", "SQL", "Git"]
     }
+    
     </script>
+
+    <!-- Tarte au Citron -->
+    <script type="text/javascript" src="js/tarteaucitron/tarteaucitron.min.js"></script>
+
+
+    <script>
+        tarteaucitron.init({
+            "privacyUrl": "/privacy.html",
+            "hashtag": "#tarteaucitron",
+            "highPrivacy": true, // bloque les cookies avant consentement
+            "orientation": "bottom",
+            "showAlertSmall": true,
+            "cookieslist": true
+        });
+
+        // --- Configuration Google Analytics (gtag.js) ---
+        tarteaucitron.user.gtagUa = 'G-0BE3DMY18F';
+        tarteaucitron.user.gtagMore = function () {};
+
+        // déclare le service "gtag" pour tarteaucitron
+        (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+</script>
+
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>

@@ -162,11 +162,6 @@
     100% { transform: scale(1) rotate(var(--rotate-angle)); }
 }
 
-/* Fade out animation */
-.flower.fading {
-    /*animation: bloomOut 5s forwards cubic-bezier(0.3, 0, 0.7, 1);*/
-}
-
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
     .flower.blooming,
