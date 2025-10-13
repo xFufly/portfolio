@@ -1,0 +1,161 @@
+/* Flower Animation Styles */
+
+/* Flower Container Positioning */
+.flower-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 180px;
+    pointer-events: none; /* Allow clicking through flowers */
+    z-index: 1100; /* Above content but below navbar */
+    overflow: visible;
+}
+
+.flower-container.left {
+    left: 0;
+}
+
+.flower-container.right {
+    right: 0;
+}
+
+/* Base Flower Styles */
+.flower {
+    position: absolute;
+    opacity: 0;
+    transform-origin: center;
+    will-change: transform, opacity;
+    /* Custom properties for animation control */
+    --animation-progress: 0;
+    --animation-direction: normal;
+}
+
+/* Flower Types */
+.flower-rose {
+    width: 30px;
+    height: 30px;
+}
+
+.flower-daisy {
+    width: 24px;
+    height: 24px;
+}
+
+.flower-tulip {
+    width: 26px;
+    height: 34px;
+}
+
+/* SVG fills based on theme */
+.flower svg path.petal {
+    fill: rgba(var(--accent-pink-rgb), 0.9);
+}
+
+.flower svg path.center {
+    fill: rgba(var(--accent-pink-2-rgb), 1);
+}
+
+.flower svg path.stem {
+    fill: rgba(144, 238, 144, 0.8);
+}
+
+/* Bloom Animations */
+@keyframes bloomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+    40% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(2) rotate(var(--rotate-angle));
+    }
+}
+
+@keyframes bloomOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(var(--rotate-angle));
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(calc(var(--float-direction) * 60px)) 
+                   scale(0.8) 
+                   rotate(calc(var(--rotate-angle) + var(--rotate-more)));
+    }
+}
+
+@keyframes floatEffect {
+    0%, 100% {
+        transform: translateY(0) rotate(var(--rotate-angle));
+    }
+    50% {
+        transform: translateY(calc(var(--float-direction) * 10px)) 
+                   rotate(calc(var(--rotate-angle) + 3deg));
+    }
+}
+
+/* Animation States with Scroll Direction Awareness */
+/* Stage 0: Initial bud state */
+.flower.stage-0 {
+    opacity: calc(0.2 + (var(--animation-progress) * 0.3));
+    transform: scale(calc(0.2 + (var(--animation-progress) * 0.3))) rotate(var(--rotate-angle));
+}
+
+/* Stage 1: Partial bloom */
+.flower.stage-1 {
+    opacity: calc(0.5 + (var(--animation-progress) * 0.3));
+    transform: scale(calc(0.5 + (var(--animation-progress) * 0.3))) rotate(var(--rotate-angle));
+}
+
+/* Stage 2: Nearly bloomed */
+.flower.stage-2 {
+    opacity: calc(0.8 + (var(--animation-progress) * 0.2));
+    transform: scale(calc(0.8 + (var(--animation-progress) * 0.2))) rotate(var(--rotate-angle));
+}
+
+/* Stage 3: Fully bloomed */
+.flower.stage-3 {
+    opacity: 1;
+    transform: scale(1) rotate(var(--rotate-angle));
+    animation: floatEffect 1s ease-in-out infinite;
+    animation-direction: var(--animation-direction);
+}
+
+/* Bursting effect for maximum bloom */
+.flower.bursting {
+    animation: burstEffect 8s forwards;
+}
+
+@keyframes burstEffect {
+    0% { transform: scale(1) rotate(var(--rotate-angle)); }
+    50% { transform: scale(2) rotate(calc(var(--rotate-angle) + 5deg)); }
+    100% { transform: scale(1) rotate(var(--rotate-angle)); }
+}
+
+/* Fade out animation */
+.flower.fading {
+    /*animation: bloomOut 5s forwards cubic-bezier(0.3, 0, 0.7, 1);*/
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .flower.blooming,
+    .flower.bloomed,
+    .flower.fading {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    .flower.blooming,
+    .flower.bloomed {
+        opacity: 0.7;
+        transform: scale(0.4);
+    }
+    
+    .flower.fading {
+        opacity: 0;
+    }
+}

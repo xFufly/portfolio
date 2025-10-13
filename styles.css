@@ -10,6 +10,11 @@
     --text-muted: #94a3b8;
     --accent-primary: #3b82f6;
     --accent-secondary: #8b5cf6;
+    /* Pink accents */
+    --accent-pink: #f9a8d4; /* lighter pink (for light background) */
+    --accent-pink-2: #f472b6; /* rose-400 */
+    --accent-pink-rgb: 249, 168, 212;
+    --accent-pink-2-rgb: 244, 114, 182;
     --accent-success: #10b981;
     --border-light: #e2e8f0;
     --shadow-light: rgba(0, 0, 0, 0.1);
@@ -71,6 +76,11 @@
     --text-muted: #94a3b8;
     --accent-primary: #60a5fa;
     --accent-secondary: #a78bfa;
+    /* Dark theme pink accents */
+    --accent-pink: #ec4899; /* stronger pink for dark background */
+    --accent-pink-2: #f472b6;
+    --accent-pink-rgb: 236, 72, 153;
+    --accent-pink-2-rgb: 244, 114, 182;
     --border-light: #334155;
     --shadow-light: rgba(0, 0, 0, 0.3);
     --shadow-medium: rgba(0, 0, 0, 0.4);
@@ -124,7 +134,7 @@ input:focus-visible,
 .social-link:focus-visible,
 .cta-primary:focus-visible,
 .cta-secondary:focus-visible {
-    outline: 2px solid var(--accent-primary);
+    outline: 2px solid var(--accent-pink);
     outline-offset: 2px;
 }
 
@@ -184,6 +194,17 @@ input:focus-visible,
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
     color: var(--accent-primary);
+}
+
+.nav-brand::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-left: 8px;
+    vertical-align: middle;
+    background: var(--accent-pink);
+    border-radius: 50%;
 }
 
 .nav-links {
@@ -376,7 +397,7 @@ input:focus-visible,
     font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-bold);
     margin: 0;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-pink), var(--accent-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -436,7 +457,7 @@ input:focus-visible,
 }
 
 .cta-primary:hover {
-    background: var(--accent-secondary);
+    background: linear-gradient(90deg, var(--accent-pink), var(--accent-secondary));
     transform: translateY(-2px);
     box-shadow: 0 6px 20px var(--shadow-medium);
 }
@@ -736,7 +757,7 @@ input:focus-visible,
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(180deg, rgba(236,72,153,0.12), rgba(0,0,0,0.6));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -752,7 +773,7 @@ input:focus-visible,
     color: white;
     padding: var(--space-3);
     border-radius: var(--radius-md);
-    background: var(--accent-primary);
+    background: linear-gradient(90deg, var(--accent-pink), var(--accent-primary));
     transition: all var(--transition-fast);
     display: flex;
     align-items: center;
@@ -760,7 +781,7 @@ input:focus-visible,
 }
 
 .project-link:hover {
-    background: var(--accent-secondary);
+    background: linear-gradient(90deg, var(--accent-pink-2), var(--accent-secondary));
     transform: scale(1.1);
 }
 
@@ -790,18 +811,49 @@ input:focus-visible,
 /* Tags */
 .tag {
     display: inline-block;
-    background: var(--accent-primary);
-    color: white;
+    background: transparent;
+    color: var(--text-primary);
     border-radius: var(--radius-sm);
     padding: var(--space-1) var(--space-3);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     transition: all var(--transition-fast);
+    border: 1px solid var(--accent-pink);
 }
 
 .tag:hover {
-    background: var(--accent-secondary);
-    transform: scale(1.05);
+    /* fallback for browsers without color-mix */
+    background: rgba(var(--accent-pink-rgb), 0.18);
+    transform: translateY(-2px) scale(1.02);
+    color: white;
+    border-color: var(--accent-pink-2);
+}
+
+/* Dark theme adjustment: ensure tags are readable on dark bg */
+[data-theme="dark"] .tag {
+    color: var(--text-primary);
+    border: 1px solid rgba(var(--accent-pink-rgb), 0.6);
+}
+
+[data-theme="dark"] .tag:hover {
+    background: rgba(var(--accent-pink-rgb), 0.28);
+}
+
+/* Profile image soft pink glow */
+.profile-img {
+    box-shadow: 0 8px 30px rgba(var(--accent-pink-rgb), 0.12), 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Nav link underline uses pink on hover */
+.nav-links a::after {
+    background: var(--accent-primary);
+}
+.nav-links a:hover {
+    color: var(--accent-pink);
+}
+.nav-links a:hover::after {
+    background: var(--accent-pink);
+    width: 100%;
 }
 
 /* Contact Section */
