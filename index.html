@@ -61,21 +61,36 @@
 
     <script>
         tarteaucitron.init({
-            "privacyUrl": "/privacy.html",
+            "privacyUrl": "/privacy.html", 
             "hashtag": "#tarteaucitron",
             "highPrivacy": true, // bloque les cookies avant consentement
             "orientation": "bottom",
             "showAlertSmall": true,
-            "cookieslist": true
+            "cookieslist": true,
+            "useExternalCss": false
         });
 
-        // --- Configuration Google Analytics (gtag.js) ---
+        // --- Google Analytics (gtag.js) ---
         tarteaucitron.user.gtagUa = 'G-0BE3DMY18F';
         tarteaucitron.user.gtagMore = function () {};
-
-        // déclare le service "gtag" pour tarteaucitron
         (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
-</script>
+
+        // --- Google AdSense ---
+        tarteaucitron.services.adsense = {
+            "key": "adsense",
+            "type": "ads",
+            "name": "Google AdSense",
+            "uri": "https://policies.google.com/privacy",
+            "needConsent": true,
+            "cookies": ['_gads'],
+            "js": function () {
+                tarteaucitron.addScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9699399703720142', '', function () {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                }, true, "anonymous");
+            }
+        };
+        (tarteaucitron.job = tarteaucitron.job || []).push('adsense');
+    </script>
 
 </head>
 <body>
