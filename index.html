@@ -81,44 +81,6 @@
         (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
     </script>
 
-    <script>
-        tarteaucitron.services.adsterra = {
-            "key": "adsterra",
-            "type": "ads",
-            "name": "Adsterra",
-            "needConsent": true,
-            "cookies": [], // Adsterra ne pose pas de cookies directement côté client
-            "readmoreLink": "https://adsterra.com/privacy-policy/",
-            "js": function () {
-                var script1 = document.createElement('script');
-                script1.type = "text/javascript";
-                script1.innerHTML = `
-                    atOptions = {
-                        'key' : '3042be3af06c36143b26064a3cec878a',
-                        'format' : 'iframe',
-                        'height' : 50,
-                        'width' : 320,
-                        'params' : {}
-                    };
-                `;
-                document.body.appendChild(script1);
-
-                var script2 = document.createElement('script');
-                script2.type = "text/javascript";
-                script2.src = "//www.highperformanceformat.com/3042be3af06c36143b26064a3cec878a/invoke.js";
-                document.body.appendChild(script2);
-            },
-            "fallback": function () {
-                // Ce qui s'affiche si l'utilisateur refuse
-                document.write('<div style="text-align:center; padding:10px;">Publicité désactivée</div>');
-            }
-        };
-
-        // on déclare le job à exécuter
-        (tarteaucitron.job = tarteaucitron.job || []).push('adsterra');
-    </script>
-
-
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
@@ -458,7 +420,48 @@
             <p id="footer-text">&copy; 2025 Tim DIDELOT. Tous droits réservés.</p>
         </div>
     </footer>
+<script>
+tarteaucitron.services.adsterra = {
+  key: "adsterra",
+  type: "ads",
+  name: "Adsterra",
+  needConsent: true,
+  cookies: [],
+  readmoreLink: "https://adsterra.com/privacy-policy/",
+  js: function () {
+    // Vérifie que le DOM est prêt avant d’injecter les scripts
+    document.addEventListener("DOMContentLoaded", function () {
+      var s1 = document.createElement("script");
+      s1.type = "text/javascript";
+      s1.innerHTML = `
+        atOptions = {
+          'key': '3042be3af06c36143b26064a3cec878a',
+          'format': 'iframe',
+          'height': 50,
+          'width': 320,
+          'params': {}
+        };
+      `;
+      document.body.appendChild(s1);
 
+      var s2 = document.createElement("script");
+      s2.type = "text/javascript";
+      s2.src = "//www.highperformanceformat.com/3042be3af06c36143b26064a3cec878a/invoke.js";
+      document.body.appendChild(s2);
+    });
+  },
+  fallback: function () {
+    // Affiche seulement si l’utilisateur refuse
+    var placeholder = document.createElement("div");
+    placeholder.textContent = "Publicité désactivée";
+    placeholder.style = "text-align:center; padding:10px; color:#777;";
+    document.body.appendChild(placeholder);
+  }
+};
+
+// Déclare le service
+(tarteaucitron.job = tarteaucitron.job || []).push('adsterra');
+</script>
     <script src="script.js"></script>
     <script src="js/flower-bloom.js"></script>
 </body>
