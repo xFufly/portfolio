@@ -35,7 +35,6 @@
         "description": "Étudiant BUT informatique, Data Analyst chez Wikicampers, développeur freelance",
         "url": "https://xfufly.github.io/portfolio",
         "email": "tdidelot@iutbayonne.univ-pau.fr",
-        "telephone": "0763616746",
         "sameAs": [
             "https://github.com/xFufly"
         ],
@@ -52,7 +51,6 @@
         ],
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "5 Allée de la Claire Fontaine",
             "addressLocality": "Tarnos",
             "postalCode": "40220",
             "addressCountry": "FR"
@@ -81,22 +79,6 @@
         tarteaucitron.user.gtagUa = 'G-0BE3DMY18F';
         tarteaucitron.user.gtagMore = function () {};
         (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
-
-        // --- Google AdSense ---
-        tarteaucitron.services.adsense = {
-            "key": "adsense",
-            "type": "ads",
-            "name": "Google AdSense",
-            "uri": "https://policies.google.com/privacy",
-            "needConsent": true,
-            "cookies": ['_gads'],
-            "js": function () {
-                tarteaucitron.addScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9699399703720142', '', function () {
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                }, true, "anonymous");
-            }
-        };
-        (tarteaucitron.job = tarteaucitron.job || []).push('adsense');
     </script>
 
 </head>
