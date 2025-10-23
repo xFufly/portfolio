@@ -114,7 +114,7 @@ html {
     position: absolute;
     top: -40px;
     left: 6px;
-    background: var(--accent-primary);
+    background: var(--accent-pink-2);
     color: white;
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-md);
@@ -194,7 +194,7 @@ input:focus-visible,
 .nav-brand {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
-    color: var(--accent-primary);
+    color: var(--accent-pink-2);
 }
 
 .nav-brand::after {
@@ -204,7 +204,7 @@ input:focus-visible,
     height: 8px;
     margin-left: 8px;
     vertical-align: middle;
-    background: var(--accent-pink);
+    background: #10b981;
     border-radius: 50%;
 }
 
@@ -303,7 +303,7 @@ input:focus-visible,
 }
 
 .lang-btn.active {
-    background: var(--accent-primary);
+    background: var(--accent-pink);
     color: white;
 }
 
@@ -327,8 +327,8 @@ input:focus-visible,
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 20%, var(--accent-primary)10, transparent 50%),
-                radial-gradient(circle at 70% 80%, var(--accent-secondary)10, transparent 50%);
+    background: radial-gradient(circle at 30% 20%, var(--accent-pink)10, transparent 50%),
+                radial-gradient(circle at 70% 80%, var(--accent-pink-2)10, transparent 50%);
     z-index: 0;
 }
 
@@ -398,7 +398,7 @@ input:focus-visible,
     font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-bold);
     margin: 0;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-pink), var(--accent-secondary));
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-secondary), var(--accent-pink-2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -452,25 +452,24 @@ input:focus-visible,
 }
 
 .cta-primary {
-    background: var(--accent-primary);
+    background: var(--accent-pink-2);
     color: white;
     box-shadow: 0 4px 12px var(--shadow-light);
 }
 
 .cta-primary:hover {
-    background: linear-gradient(90deg, var(--accent-pink), var(--accent-secondary));
+    background: var(--accent-pink);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--shadow-medium);
 }
 
 .cta-secondary {
     background: transparent;
-    color: var(--accent-primary);
-    border: 2px solid var(--accent-primary);
+    color: var(--accent-pink-2);
+    border: 2px solid var(--accent-pink);
 }
 
 .cta-secondary:hover {
-    background: var(--accent-primary);
+    background: var(--accent-pink);
     color: white;
     transform: translateY(-2px);
 }
@@ -560,7 +559,7 @@ input:focus-visible,
     top: 0;
     left: 0;
     height: 100%;
-    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    background: linear-gradient(90deg, var(--accent-pink), var(--accent-pink-2));
     border-radius: var(--radius-sm);
     width: var(--level, 0%);
     transition: width 1s ease-out;
@@ -574,7 +573,7 @@ input:focus-visible,
     justify-content: center;
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-bold);
-    background: var(--accent-primary);
+    background: var(--accent-pink);
     color: white;
     border-radius: var(--radius-sm);
 }
@@ -586,7 +585,7 @@ input:focus-visible,
 }
 
 .skill-tag {
-    background: var(--accent-primary);
+    background: var(--accent-pink);
     color: white;
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-lg);
@@ -614,7 +613,7 @@ input:focus-visible,
     top: 0;
     bottom: 0;
     width: 2px;
-    background: var(--accent-primary);
+    background: var(--accent-pink);
 }
 
 .experience-item, .education-item {
@@ -631,7 +630,7 @@ input:focus-visible,
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: var(--accent-primary);
+    background: var(--accent-pink-2);
     border: 3px solid var(--bg-primary);
 }
 
@@ -663,13 +662,13 @@ input:focus-visible,
 }
 
 .experience-role {
-    color: var(--accent-primary);
+    color: var(--accent-secondary);
     font-weight: var(--font-weight-medium);
     font-size: var(--font-size-base);
 }
 
 .education-school {
-    color: var(--text-secondary);
+    color: var(--accent-secondary);
     font-style: italic;
     margin: var(--space-1) 0 var(--space-3) 0;
 }
@@ -732,7 +731,7 @@ input:focus-visible,
 }
 
 .project-card.featured {
-    border: 2px solid var(--accent-primary);
+    border: 2px solid var(--accent-pink);
 }
 
 .project-image {
@@ -758,7 +757,7 @@ input:focus-visible,
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(236,72,153,0.12), rgba(0,0,0,0.6));
+    background: rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
