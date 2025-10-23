@@ -70,7 +70,7 @@ class Portfolio {
         en: {
             name: "Tim DIDELOT",
             subtitle: "Data Analyst • Computer Science Student",
-            location: "📍 Tarnos • IUT Anglet",
+            location: "📍 Tarnos • University Institute of Technology of Bayonne and the Basque Country",
             "status-text": "Available for projects",
             "hero-description": "I've loved computing since I was a kid. I combine software development and data analysis to build useful tools. Amateur musician (drums, piano, bass) and jazz fan.",
             "nav-brand": "xFufly",
