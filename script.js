@@ -51,11 +51,14 @@ class Portfolio {
             "edu-bac": "Baccalauréat Général",
             "edu-specializations": "Spécialités : Informatique, Anglais, Mathématiques",
             "projects-title": "Projets principaux",
+
             "storyforge-desc": "Logiciel de création et d'édition de User Stories en SCRUM.",
             "predictionai-desc": "Système IA léger basé sur la bibliothèque NeuraFlow.",
             "neuraflow-desc": "Bibliothèque JavaScript pour le Machine Learning.",
             "fossnote-desc": "PRONOTE auto-hébergé open source et gratuit.",
             "perplex-desc": "Bibliothèque fournissant un client minimal pour interroger l'API Perplexity.",
+            "switch2brew-desc": "Alternative au Homebrew Launcher et plate-forme pour le développement sur Nintendo Switch 2.",
+            
             "contact-title": "Contact",
             "contact-description": "Intéressé par mon profil ? N'hésitez pas à me contacter !",
             "footer-text": "© 2025 Tim DIDELOT. Tous droits réservés.",
@@ -110,11 +113,14 @@ class Portfolio {
             "edu-bac": "General Baccalaureate",
             "edu-specializations": "Specializations: Computer Science, English, Mathematics",
             "projects-title": "Main Projects",
+            
             "storyforge-desc": "Software for creating and editing User Stories in SCRUM.",
             "predictionai-desc": "Lightweight AI system based on the NeuraFlow library.",
             "neuraflow-desc": "JavaScript library for Machine Learning.",
             "fossnote-desc": "Self-hosted, open source and free PRONOTE alternative.",
             "perplex-desc": "Library providing a minimal client to query the Perplexity API.",
+            "switch2brew-desc": "Alternative homebrew launcher and platform for Nintendo Switch 2 development",
+
             "contact-title": "Contact",
             "contact-description": "Interested in my profile? Feel free to contact me!",
             "footer-text": "© 2025 Tim DIDELOT. All rights reserved.",
