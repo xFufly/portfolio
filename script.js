@@ -12,7 +12,7 @@ class Portfolio {
         fr: {
             name: "Tim DIDELOT",
             subtitle: "Data Analyst • Étudiant BUT Informatique",
-            location: "📍 Tarnos • IUT Anglet",
+            location: "📍 Biarritz • IUT Anglet",
             "status-text": "Disponible pour des projets",
             "hero-description": "Passionné d'informatique depuis l'enfance, je mêle développement et analyse de données pour transformer les idées en produits utiles. Musicien amateur (batterie, piano, basse) — amoureux du jazz.",
             "nav-brand": "xFufly",
@@ -61,7 +61,7 @@ class Portfolio {
             
             "contact-title": "Contact",
             "contact-description": "Intéressé par mon profil ? N'hésitez pas à me contacter !",
-            "footer-text": "© 2025 Tim DIDELOT. Tous droits réservés.",
+            "footer-text": "© 2026 Tim DIDELOT. Tous droits réservés.",
             "skill-sqlbdd": "SQL & Bases de données",
             "skill-git": "Git & Contrôle de version",
 
@@ -74,7 +74,7 @@ class Portfolio {
         en: {
             name: "Tim DIDELOT",
             subtitle: "Data Analyst • Computer Science Student",
-            location: "📍 Tarnos • University Institute of Technology of Bayonne and the Basque Country",
+            location: "📍 Biarritz • University Institute of Technology of Bayonne and the Basque Country",
             "status-text": "Available for projects",
             "hero-description": "I've loved computing since I was a kid. I combine software development and data analysis to build useful tools. Amateur musician (drums, piano, bass) and jazz fan.",
             "nav-brand": "xFufly",
@@ -123,7 +123,7 @@ class Portfolio {
 
             "contact-title": "Contact",
             "contact-description": "Interested in my profile? Feel free to contact me!",
-            "footer-text": "© 2025 Tim DIDELOT. All rights reserved.",
+            "footer-text": "© 2026 Tim DIDELOT. All rights reserved.",
             "skill-sqlbdd": "SQL & Database",
             "skill-git": "Git & Versioning",
 
